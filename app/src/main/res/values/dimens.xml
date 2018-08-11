@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_side_margin">16dp</dimen>
+    <dimen name="appbar_height_expanded">256dp</dimen>
+    <dimen name="detail_metabar_vert_padding">8dp</dimen>
+    <dimen name="detail_metabar_title_bottom_padding">16dp</dimen>
+    <dimen name="fab_margin">8dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="material_component_cards_padding">16dp</dimen>
+    <dimen name="material_component_cards_gap">4dp</dimen>
+    <dimen name="app_bar_elevation">4dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="fab_press_translation_z">6dp</dimen>
+    <dimen name="screen_edge_margin">16dp</dimen>
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="drawer_width">256dp</dimen>
+
+</resources>

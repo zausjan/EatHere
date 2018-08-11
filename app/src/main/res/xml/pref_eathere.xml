@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:title="@string/location"
+        android:key="@string/key_location"
+        android:defaultValue="Brno" />
+
+    <EditTextPreference
+        android:title="@string/radius"
+        android:key="@string/key_radius"
+        android:defaultValue="10000"
+        android:inputType="numberDecimal"/>
+
+    <CheckBoxPreference
+        android:title="@string/enableGPS"
+        android:key="@string/key_gps"
+        android:defaultValue="true" />
+
+
+</PreferenceScreen>
