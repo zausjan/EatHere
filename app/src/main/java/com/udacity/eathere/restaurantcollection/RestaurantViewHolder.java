@@ -1,9 +1,6 @@
-package com.udacity.eathere.RestaurantCollection;
+package com.udacity.eathere.restaurantcollection;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -12,7 +9,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.udacity.eathere.R;
-import com.udacity.eathere.model.Restaurant;
 import com.udacity.eathere.model.SimpleRestaurant;
 
 public class RestaurantViewHolder extends RecyclerView.ViewHolder {

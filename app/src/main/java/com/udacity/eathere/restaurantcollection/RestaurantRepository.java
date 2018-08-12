@@ -1,4 +1,4 @@
-package com.udacity.eathere.RestaurantCollection;
+package com.udacity.eathere.restaurantcollection;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;

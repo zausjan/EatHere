@@ -41,15 +41,10 @@ import java.util.List;
 import static com.udacity.eathere.ui.RestaurantDetailActivity.EXTRA_ID;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private static final String TAG = "MapFragment";
 
-    public MapFragment() {
-    }
 
     private static final int DEFAULT_ZOOM = 13;
     public static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -129,7 +124,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                 if (appState.getGPSOn()) {
                     getDeviceLocation();
                 }
-                zoomToLocation(appState);
+                if(cameraPosition == null){
+                    zoomToLocation(appState);
+                }
                 viewModel.getNearestRestaurantsObservable(appState.getLatitude(), appState.getLongitude()).observe(getActivity(), new Observer<List<SimpleRestaurant>>() {
                     @Override
                     public void onChanged(@Nullable List<SimpleRestaurant> restaurants) {

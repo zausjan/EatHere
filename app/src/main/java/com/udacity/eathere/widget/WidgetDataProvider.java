@@ -1,4 +1,4 @@
-package com.udacity.eathere.Widget;
+package com.udacity.eathere.widget;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
 import com.google.gson.Gson;
-import com.udacity.eathere.DailyMenuCollection.MenuRepository;
 import com.udacity.eathere.R;
 import com.udacity.eathere.model.DailyMenu;
 import com.udacity.eathere.model.Dish;
@@ -16,7 +15,7 @@ import com.udacity.eathere.model.Dishes;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.udacity.eathere.Widget.MenuWidgetProvider.WIDGET_MENU;
+import static com.udacity.eathere.widget.MenuWidgetProvider.WIDGET_MENU;
 
 public class WidgetDataProvider implements RemoteViewsService.RemoteViewsFactory {
 

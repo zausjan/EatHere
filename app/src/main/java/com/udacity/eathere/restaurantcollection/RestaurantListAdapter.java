@@ -1,4 +1,4 @@
-package com.udacity.eathere.RestaurantCollection;
+package com.udacity.eathere.restaurantcollection;
 
 import android.content.Context;
 import android.content.Intent;

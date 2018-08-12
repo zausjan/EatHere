@@ -21,13 +21,13 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
-import com.udacity.eathere.DailyMenuCollection.MenuFragment;
+import com.udacity.eathere.dailymenucollection.MenuFragment;
 import com.udacity.eathere.viewmodel.MenuViewModel;
 import com.udacity.eathere.viewmodel.MenuViewModelFactory;
 import com.udacity.eathere.R;
 import com.udacity.eathere.viewmodel.RestaurantDetailViewModel;
 import com.udacity.eathere.viewmodel.RestaurantDetailViewModelFactory;
-import com.udacity.eathere.Widget.UpdateWidgetsService;
+import com.udacity.eathere.widget.UpdateWidgetsService;
 import com.udacity.eathere.model.DailyMenu;
 import com.udacity.eathere.model.Restaurant;
 
@@ -35,12 +35,13 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.udacity.eathere.ui.LocationFragment.EXTRA_LAT;
 import static com.udacity.eathere.ui.LocationFragment.EXTRA_LON;
 import static com.udacity.eathere.ui.RestaurantDetailActivity.EXTRA_ID;
-import static com.udacity.eathere.Widget.MenuWidgetProvider.WIDGET_MENU;
+import static com.udacity.eathere.widget.MenuWidgetProvider.WIDGET_MENU;
 
 
 public class RestaurantDetailFragment extends Fragment {
 
     private static final String TAG = "RestaurantDetailFrag";
+
     private RestaurantDetailViewModel viewModel;
     private String restaurantId = "";
     private Restaurant restaurant;
@@ -101,7 +102,6 @@ public class RestaurantDetailFragment extends Fragment {
         viewPager = rootView.findViewById(R.id.pager);
         tabLayout = rootView.findViewById(R.id.tabs);
 
-
         observeViewModel(viewModel);
 
         return rootView;
@@ -122,11 +122,14 @@ public class RestaurantDetailFragment extends Fragment {
     }
 
     private void setupViewPager() {
-        pagerAdapter = new RestaurantDetailPagerAdapter(getChildFragmentManager());
-        viewPager.setAdapter(pagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setNestedScrollingEnabled(false);
-        viewPager.setNestedScrollingEnabled(false);
+        if(pagerAdapter == null){
+            pagerAdapter = new RestaurantDetailPagerAdapter(getChildFragmentManager());
+            viewPager.setAdapter(pagerAdapter);
+            tabLayout.setupWithViewPager(viewPager);
+            tabLayout.setNestedScrollingEnabled(false);
+            viewPager.setNestedScrollingEnabled(false);
+
+        }
 
     }
 

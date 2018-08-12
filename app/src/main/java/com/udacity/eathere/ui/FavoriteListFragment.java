@@ -4,6 +4,7 @@ package com.udacity.eathere.ui;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,16 +15,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.udacity.eathere.R;
-import com.udacity.eathere.RestaurantCollection.RestaurantListAdapter;
+import com.udacity.eathere.restaurantcollection.RestaurantListAdapter;
 import com.udacity.eathere.model.SimpleRestaurant;
 import com.udacity.eathere.viewmodel.RestaurantViewModel;
 
 import java.util.List;
 
+import static com.udacity.eathere.ui.NearestListFragment.RECYCLER_SCROLL_STATE;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class FavoriteListFragment extends Fragment {
 
     private RecyclerView rv;
@@ -41,7 +41,7 @@ public class FavoriteListFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_restaurant_list, container, false);
 
         rv = rootView.findViewById(R.id.rv_nearest_restaurants);
@@ -54,18 +54,27 @@ public class FavoriteListFragment extends Fragment {
         viewModel.getFavoriteRestaurants().observe(this, new Observer<List<SimpleRestaurant>>() {
             @Override
             public void onChanged(@Nullable List<SimpleRestaurant> restaurants) {
-                if(restaurants != null && restaurants.size() > 0) {
+                if (restaurants != null) {
                     adapter.setData(restaurants);
-                    empty.setVisibility(View.GONE);
+                    if (savedInstanceState != null)
+                        rv.getLayoutManager().onRestoreInstanceState(savedInstanceState.getParcelable(RECYCLER_SCROLL_STATE));
+                    if (restaurants.size() > 0) {
+                        empty.setVisibility(View.GONE);
+
+                    } else {
+                        empty.setVisibility(View.VISIBLE);
+                    }
                 }
-                else {
-                    empty.setVisibility(View.VISIBLE);
                 }
-            }
-        });
+            });
 
         return rootView;
+        }
+
+        @Override
+        public void onSaveInstanceState (@NonNull Bundle outState){
+            super.onSaveInstanceState(outState);
+            outState.putParcelable(RECYCLER_SCROLL_STATE, rv.getLayoutManager().onSaveInstanceState());
+        }
+
     }
-
-
-}

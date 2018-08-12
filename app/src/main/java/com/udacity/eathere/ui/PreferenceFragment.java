@@ -25,9 +25,6 @@ import com.udacity.eathere.model.LocationSuggestion;
 import static com.udacity.eathere.ui.MapFragment.LOCATION_PERMISSION_REQUEST_CODE;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class PreferenceFragment extends PreferenceFragmentCompat {
     private AppStateRepository appStateRepository;
     private RestaurantViewModel viewModel;

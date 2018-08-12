@@ -4,15 +4,18 @@
         <item
             android:id="@+id/nav_nearest"
             android:icon="@drawable/ic_gps_fixed_black_24dp"
-            android:title="@string/nerest" />
+            android:title="@string/nerest"
+            android:contentDescription="@string/nerest"/>
         <item
             android:id="@+id/nav_favorite"
             android:icon="@drawable/ic_favorite_black_24dp"
-            android:title="@string/favorite" />
+            android:title="@string/favorite"
+            android:contentDescription="@string/favorite"/>
         <item
             android:id="@+id/nav_map"
             android:icon="@drawable/ic_map_black_24dp"
-            android:title="@string/map" />
+            android:title="@string/map"
+            android:contentDescription="@string/map"/>
 
         <item
             android:id="@+id/nav_settings"

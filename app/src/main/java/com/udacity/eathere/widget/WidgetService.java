@@ -1,4 +1,4 @@
-package com.udacity.eathere.Widget;
+package com.udacity.eathere.widget;
 
 import android.content.Intent;
 import android.widget.RemoteViewsService;

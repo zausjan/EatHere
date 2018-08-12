@@ -1,4 +1,4 @@
-package com.udacity.eathere.DailyMenuCollection;
+package com.udacity.eathere.dailymenucollection;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

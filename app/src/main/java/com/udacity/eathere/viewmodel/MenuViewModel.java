@@ -5,7 +5,7 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
-import com.udacity.eathere.DailyMenuCollection.MenuRepository;
+import com.udacity.eathere.dailymenucollection.MenuRepository;
 import com.udacity.eathere.model.DailyMenu;
 
 

@@ -5,7 +5,7 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
-import com.udacity.eathere.RestaurantCollection.RestaurantRepository;
+import com.udacity.eathere.restaurantcollection.RestaurantRepository;
 import com.udacity.eathere.model.Restaurant;
 
 public class RestaurantDetailViewModel extends AndroidViewModel{

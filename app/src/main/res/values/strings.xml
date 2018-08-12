@@ -31,6 +31,9 @@
     <string name="widget_error">Restaurant does not provide menu</string>
     <string name="empty_section">This section is empty</string>
     <string name="network_error">Network is not available</string>
+    <string name="banner">Banner</string>
+    <string name="logo">App logo</string>
+    <string name="widget_icon">Widget icon</string>
 
 
 </resources>

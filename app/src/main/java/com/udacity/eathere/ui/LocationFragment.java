@@ -2,6 +2,7 @@ package com.udacity.eathere.ui;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,9 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.udacity.eathere.R;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class LocationFragment extends Fragment {
 
     public static final String EXTRA_LAT = "extra_lat";
@@ -35,6 +34,7 @@ public class LocationFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         Bundle args = getArguments();
         if (args != null) {
             lat = args.getDouble(EXTRA_LAT);
@@ -43,7 +43,7 @@ public class LocationFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_location, container, false);
 
         mapView = rootView.findViewById(R.id.mapView);
@@ -61,16 +61,23 @@ public class LocationFragment extends Fragment {
             @Override
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
+                googleMap.getUiSettings().setScrollGesturesEnabled(false);
+
 
                 LatLng position = new LatLng(lat, lng);
                 googleMap.addMarker(new MarkerOptions().position(position));
-
                 CameraPosition cameraPosition = new CameraPosition.Builder().target(position).zoom(14).build();
-                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+                googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             }
         });
 
         return rootView;
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.udacity.eathere.DailyMenuCollection;
+package com.udacity.eathere.dailymenucollection;
 
 
 import android.arch.lifecycle.Observer;

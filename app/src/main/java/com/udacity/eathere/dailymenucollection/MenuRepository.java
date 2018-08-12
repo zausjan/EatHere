@@ -1,4 +1,4 @@
-package com.udacity.eathere.DailyMenuCollection;
+package com.udacity.eathere.dailymenucollection;
 
 import android.app.Application;
 import android.arch.lifecycle.LiveData;

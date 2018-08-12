@@ -6,7 +6,7 @@ import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
 import com.udacity.eathere.model.AppState;
-import com.udacity.eathere.RestaurantCollection.RestaurantRepository;
+import com.udacity.eathere.restaurantcollection.RestaurantRepository;
 import com.udacity.eathere.model.LocationSuggestion;
 import com.udacity.eathere.model.SimpleRestaurant;
 

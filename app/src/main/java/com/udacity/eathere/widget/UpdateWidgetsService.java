@@ -1,4 +1,4 @@
-package com.udacity.eathere.Widget;
+package com.udacity.eathere.widget;
 
 import android.app.IntentService;
 import android.appwidget.AppWidgetManager;
